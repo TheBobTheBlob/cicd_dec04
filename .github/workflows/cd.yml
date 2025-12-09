@@ -1,12 +1,11 @@
-name: CI
+name: CD
 
 on:
   push:
     branches: [ master ]
-  pull_request:
-
+    
 jobs:
-  run-tests:
+  coverage-and-deploy:
     runs-on: ubuntu-latest
     permissions:
       pages: write
@@ -25,8 +24,6 @@ jobs:
         run: |
           pip install -r requirements.txt
 
-      - name: Run basic tests
-        run: pytest -q
 
       - name: Run tests with coverage
         run: |
@@ -48,7 +45,7 @@ jobs:
           path: ./sites
 
   Deploy:
-    needs: run-tests
+    needs: coverage-and-deploy
     runs-on: ubuntu-latest
     permissions:
       pages: write
