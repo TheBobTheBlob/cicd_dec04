@@ -6,7 +6,7 @@ root = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(root / "src"))
 
 
-from app import add
+from app import add, subtract, multiply, divide, square, sin, cos, tan, square_root, percentage
 
 def test_add_correct():
     assert add(5, 6) == 11
