@@ -37,4 +37,8 @@ def square_root(x: int | float) -> int | float:
     return math.sqrt(x)
 
 
-def percentage
+def percentage(part: int | float, whole: int | float) -> float:
+    if whole == 0:
+        raise ValueError("Whole cannot be zero for percentage calculation.")
+    
+    return (part / whole) * 100
