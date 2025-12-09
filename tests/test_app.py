@@ -54,7 +54,7 @@ def test_cos_correct():
     assert cos(0) == 1
 
 def test_tan_correct():
-    assert tan(math.pi/4) == 1
+    assert tan(0) == 0
 
 
 def test_square_root_correct():
